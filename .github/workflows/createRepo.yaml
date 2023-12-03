@@ -47,7 +47,7 @@ jobs:
       - name: Copy  Source App to Destination
         run: |
           # Copy the contents of the source repository to the destination repository
-          cp -r ../python-flask-sample-app/* .
+          cp -r ../../python-flask-sample-app/* .
           ls -rlt
           pwd
           git add .
@@ -90,7 +90,7 @@ jobs:
       - name: Copy  Source App chart to Destination
         run: |
           # Copy the contents of the source repository to the destination repository
-          cp -r ../python-sample-helm-chart/* .
+          cp -r ../../python-sample-helm-chart/* .
           git add .
           git commit -m "Copy contents from source repository"
           git push
