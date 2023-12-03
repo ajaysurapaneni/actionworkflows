@@ -34,7 +34,8 @@ jobs:
         run: |
           echo "${{ secrets.ORG_ADMIN_TOKEN }}"  | gh auth login --with-token 
           gh repo create ajaysurapaneni/"${{ fromJson(inputs.port_payload).payload.properties.service_name }}" --public --confirm
-
+          mkdir ./destination-app-repo
+          
       - name: Checkout Destination App Repo
         run: |
           # Clone the destination repository
@@ -72,8 +73,7 @@ jobs:
       - name: Create  App chart New Repo
         run: |
           gh repo create ajaysurapaneni/"${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}" --public --confirm
-
-
+          mkdir ./destination-app-chart-repo
       
       - name: Checkout Destination App chart Repo
         run: |
