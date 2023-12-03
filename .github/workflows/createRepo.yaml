@@ -38,6 +38,11 @@ jobs:
           gh repo create ajaysurapaneni/"${{ fromJson(inputs.port_payload).payload.properties.service_name }}" --public --confirm
           mkdir ./destination-app-repo
           
+      - name: Set Git User
+        run: |
+          git config --global user.email "ajay05461@gmail.com  "
+          git config --global user.name "Ajay Surapaneni"
+          
       - name: Checkout Destination App Repo
         run: |
           # Clone the destination repository
