@@ -13,8 +13,6 @@ on:
         required: true
       PORT_CLIENT_SECRET:
         required: true
-    env:
-      GH_TOKEN: ${{ secrets.ORG_ADMIN_TOKEN }}
 
 jobs:
   scaffold-service: 
@@ -34,7 +32,7 @@ jobs:
 
       - name: Create  App New Repo
         run: |
-          #gh auth login --with-token "${{ secrets.ORG_ADMIN_TOKEN }}" 
+          echo "${{ secrets.ORG_ADMIN_TOKEN }}"  | gh auth login --with-token 
           gh repo create ajaysurapaneni/"${{ fromJson(inputs.port_payload).payload.properties.service_name }}" --public --confirm
 
       - name: Checkout Destination App Repo
