@@ -22,7 +22,7 @@ jobs:
       - name: Checkout App Source Repo
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/ajaysurapaneni/python-flask-sample-app
+          repository: ajaysurapaneni/python-flask-sample-app
 
       - name: Create  App New Repo
         run: |
@@ -67,7 +67,7 @@ jobs:
       - name: Checkout App chart Source Repo
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/ajaysurapaneni/python-sample-helm-chart
+          repository: ajaysurapaneni/python-sample-helm-chart
 
       - name: Create  App chart New Repo
         run: |
