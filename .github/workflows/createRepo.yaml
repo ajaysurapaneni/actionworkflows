@@ -29,6 +29,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ajaysurapaneni/python-flask-sample-app
+          path: python-flask-sample-app
+
 
       - name: Create  App New Repo
         run: |
@@ -71,6 +73,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ajaysurapaneni/python-sample-helm-chart
+          path: python-sample-helm-chart
+
 
       - name: Create  App chart New Repo
         run: |
