@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: port-labs/cookiecutter-gha@v1.1
-        id: scaff
+        id: scaff-app
         with:
           portClientId: ${{ secrets.PORT_CLIENT_ID }}
           portClientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
@@ -44,7 +44,7 @@ jobs:
             }
       
       - uses: port-labs/cookiecutter-gha@v1.1
-        id: scaff
+        id: scaff-charts
         with:
           portClientId: ${{ secrets.PORT_CLIENT_ID }}
           portClientSecret: ${{ secrets.PORT_CLIENT_SECRET }}
