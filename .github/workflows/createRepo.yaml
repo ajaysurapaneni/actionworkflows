@@ -57,7 +57,7 @@ jobs:
           pwd
           git add .
           git commit -m "Copy contents from source repository"
-          #git remote set-url origin https://ajaysurapaneni:${{ secrets.ORG_ADMIN_TOKEN }}@github.com:ajaysurapaneni/${{ fromJson(inputs.port_payload).payload.properties.service_name }}
+          git remote set-url origin https://ajaysurapaneni:${{ secrets.ORG_ADMIN_TOKEN }}@github.com/${{ fromJson(inputs.port_payload).payload.properties.service_name }}
           git push --set-upstream origin main
         working-directory: ./destination-app-repo/${{ fromJson(inputs.port_payload).payload.properties.service_name }}
 
@@ -99,7 +99,7 @@ jobs:
           cp -r ../../python-sample-helm-chart/* .
           git add .
           git commit -m "Copy contents from source repository"
-          git remote set-url origin https://ajaysurapaneni:${{ secrets.ORG_ADMIN_TOKEN }}@github.com:ajaysurapaneni/${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}
+          git remote set-url origin https://ajaysurapaneni:${{ secrets.ORG_ADMIN_TOKEN }}@github.com/${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}
           git push --set-upstream origin main
         working-directory: ./destination-app-chart-repo//${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}
 
