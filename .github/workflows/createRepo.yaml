@@ -38,7 +38,7 @@ jobs:
       - name: Checkout Destination App Repo
         run: |
           # Clone the destination repository
-          git clone https://github.com/${{ env.GITHUB_REPOSITORY_OWNER }}/${{ fromJson(inputs.port_payload).payload.properties.service_name }}
+          git clone https://github.com/ajaysurapaneni/${{ fromJson(inputs.port_payload).payload.properties.service_name }}
         working-directory: ./destination-app-repo
 
       - name: Copy  Source App to Destination
@@ -60,7 +60,7 @@ jobs:
           blueprint: service
           properties: |
             {
-              "url": "https://github.com/${{ env.GITHUB_REPOSITORY_OWNER }}/${{ fromJson(inputs.port_payload).payload.properties.service_name }}",
+              "url": "https://github.com/ajaysurapaneni/${{ fromJson(inputs.port_payload).payload.properties.service_name }}",
               "language": "python"
             }
       
@@ -83,7 +83,7 @@ jobs:
       - name: Checkout Destination App chart Repo
         run: |
           # Clone the destination repository
-          git clone https://github.com/${{ env.GITHUB_REPOSITORY_OWNER }}/${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}
+          git clone https://github.com/ajaysurapaneni/${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}
         working-directory: ./destination-app-chart-repo
 
       - name: Copy  Source App chart to Destination
@@ -104,7 +104,7 @@ jobs:
           blueprint: service
           properties: |
             {
-              "url": "https://github.com/${{ env.GITHUB_REPOSITORY_OWNER }}/${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}",
+              "url": "https://github.com/ajaysurapaneni/${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}",
               "language": "AmazonEks"
             }
 
