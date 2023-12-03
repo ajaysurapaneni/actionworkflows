@@ -1,0 +1,23 @@
+name: External Build Script Execution
+
+on: 
+  push:
+    branches:
+      - main  # You can change this to any branch
+
+jobs:
+  external-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout External Repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'username/repo-name'  # Replace with the other repository's name
+        token: ${{ secrets.GITHUB_TOKEN }}  # If the repo is private, use a personal access token
+        path: 'external-repo'  # Directory name to checkout the external repository
+
+    - name: Run build.sh from External Repository
+      run: |
+        chmod +x external-repo/build.sh
+        ./external-repo/build.sh
