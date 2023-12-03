@@ -53,7 +53,7 @@ jobs:
           git add .
           git commit -m "Copy contents from source repository"
           git push
-        working-directory: ./destination-app-repo
+        working-directory: ./destination-app-repo//${{ fromJson(inputs.port_payload).payload.properties.service_name }}
 
 
       - name: "Report deployment Entity to port 🚢"
@@ -94,7 +94,7 @@ jobs:
           git add .
           git commit -m "Copy contents from source repository"
           git push
-        working-directory: ./destination-app-chart-repo
+        working-directory: ./destination-app-chart-repo//${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}
 
       - name: "Report deployment Entity to port 🚢"
         uses: port-labs/port-github-action@v1
