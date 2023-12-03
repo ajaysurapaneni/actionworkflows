@@ -27,7 +27,7 @@ jobs:
       - name: Create  App New Repo
         run: |
           curl -X POST \
-            -H "Authorization: ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: ${{ secrets.ORG_ADMIN_TOKEN }}" \
             -d '{
               "name": "${{ fromJson(inputs.port_payload).payload.properties.service_name }}",
               "private": false
@@ -72,7 +72,7 @@ jobs:
       - name: Create  App chart New Repo
         run: |
           curl -X POST \
-            -H "Authorization: ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: ${{ secrets.ORG_ADMIN_TOKEN }}" \
             -d '{
               "name": "${{ fromJson(inputs.port_payload).payload.properties.service_chart_name }}",
               "private": false
