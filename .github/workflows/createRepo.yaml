@@ -46,6 +46,7 @@ jobs:
         run: |
           # Copy the contents of the source repository to the destination repository
           ls -rlt ../..
+          ls -rlt ../
           cp -r ../python-flask-sample-app/* .
           git add .
           git commit -m "Copy contents from source repository"
